@@ -1,0 +1,14 @@
+# One-click public demo on Render (https://render.com). Fictional data only: no crawling, no email.
+services:
+  - type: web
+    name: mediascout-demo
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: DEMO_MODE
+        value: "true"
+      - key: MEDIASCOUT_DB
+        value: /tmp/mediascout-demo.db
+      - key: PUBLIC_BASE_URL
+        value: https://mediascout-demo.onrender.com
